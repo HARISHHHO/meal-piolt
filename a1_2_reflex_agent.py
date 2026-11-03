@@ -1,12 +1,4 @@
-"""
-Assignment 1.2 - Rule based environmental reasoner (MealPilot)
 
-This is a SIMPLE REFLEX agent. Every tick it looks at the current percept only
-(no memory, no planning) and fires condition -> action rules, like the
-sense -> decide -> act loop from Unit 1.
-
-The kitchen telemetry is mocked, nothing here talks to real sensors.
-"""
 import random
 from common import Logger
 
