@@ -1,10 +1,4 @@
-"""
-Assignment 2.2 - Agent-B (Grocery / Market agent)  [run this in Terminal 1]
 
-Plain TCP server on localhost. It receives Agent-A's STATE payload, works out
-what the shopping basket costs and replies with a QUOTE. After that it pushes a
-PROACTIVE PRICE_ALERT that Agent-A has to handle by itself.
-"""
 import socket
 import sys
 
