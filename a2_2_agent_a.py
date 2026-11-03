@@ -1,10 +1,4 @@
-"""
-Assignment 2.2 - Agent-A (Meal Planner)  [run this in Terminal 2]
 
-Connects to Agent-B, sends its current state (menu, headcount, budget) and then
-sits in a receive loop. Whatever Agent-B pushes at it (QUOTE, PRICE_ALERT) is
-dispatched to a handler, and the handler decides what to do on its own.
-"""
 import socket
 import time
 
