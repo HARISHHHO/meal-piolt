@@ -1,0 +1,40 @@
+{
+  "_about": "MealPilot domain knowledge. Edited by hand, loaded by a4_2_knowledge_api.py",
+  "dish_tags": {
+    "dal_tadka": ["warming"],
+    "rajma_chawal": ["heavy", "warming"],
+    "chole_roti": ["heavy"],
+    "paneer_masala": ["heavy", "warming"],
+    "veg_khichdi": ["light", "warming"],
+    "idli_sambar": ["light"],
+    "egg_curry": ["warming"],
+    "chicken_curry": ["heavy", "warming"],
+    "curd_rice": ["light", "cooling"],
+    "moong_chilla": ["light", "cooling"],
+    "palak_paneer": ["warming"],
+    "veg_upma": ["light"]
+  },
+  "weather_rules": [
+    {"name": "heatwave", "if": {"temp_c_gte": 35},
+     "then": {"menu_style": "cooling_light", "prefer": ["cooling", "light"], "avoid": ["heavy", "warming"],
+              "water_litres": 3.5, "cook_time_cap_min": 30}},
+    {"name": "rainy", "if": {"rain_mm_gte": 2},
+     "then": {"menu_style": "warm_comfort", "prefer": ["warming"], "avoid": ["cooling"],
+              "water_litres": 2.5, "cook_time_cap_min": 60}},
+    {"name": "cold", "if": {"temp_c_lte": 18},
+     "then": {"menu_style": "warming_hearty", "prefer": ["warming", "heavy"], "avoid": ["cooling"],
+              "water_litres": 2.0, "cook_time_cap_min": 60}}
+  ],
+  "default_profile": {"menu_style": "balanced", "prefer": [], "avoid": [],
+                      "water_litres": 2.5, "cook_time_cap_min": 60},
+  "substitutions": {
+    "tomato": ["tamarind", "curd", "kokum"],
+    "paneer": ["tofu", "soya chunks"],
+    "onion": ["asafoetida + extra ginger"]
+  },
+  "cities": {
+    "Delhi":  {"lat": 28.61, "lon": 77.21},
+    "Mumbai": {"lat": 19.08, "lon": 72.88},
+    "Shimla": {"lat": 31.10, "lon": 77.17}
+  }
+}
