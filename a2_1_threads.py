@@ -1,16 +1,4 @@
-"""
-Assignment 2.1 - Background workers for MealPilot
 
-Problem: the agent has to keep checking vegetable prices at the mandi, but the
-main loop (the "UI") must never freeze while it waits for the network.
-
-What is used here
-  * PriceMonitor   -> a daemon thread that polls prices every ~0.6 s
-  * queue.Queue    -> worker pushes price ALERTs, main loop pops them (thread safe)
-  * threading.Lock -> protects the shared PriceBoard dict
-  * ThreadPoolExecutor -> heavy "score this day's menu" jobs run off the main loop
-  * threading.Event -> clean shutdown
-"""
 import queue
 import random
 import threading
