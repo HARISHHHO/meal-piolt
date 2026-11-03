@@ -1,18 +1,4 @@
-"""
-Assignment 3.2 - Self interested utility agent (MealPilot picks tonight's dinner)
 
-The agent only cares about its own utility score. It first throws away options
-that break hard constraints (allergy, budget, time), then scores the rest and
-picks the argmax. A brute force check at the end proves the pick is really the max.
-
-    U(d) = w_n*N(d) + w_c*C(d) + w_t*T(d) + w_p*P(d) - penalty(d)
-
-  N = nutrition fit   0.4*kcal_fit + 0.4*protein_score + 0.2*fibre_score
-  C = cost score      1 - cost/150
-  T = time score      1 - prep/60
-  P = family rating   rating/5   (from past feedback)
-  penalty = 0.15 if the dish was served in the last 2 days (variety)
-"""
 from common import Logger, DISHES
 
 log = Logger("a3_2_utility")
